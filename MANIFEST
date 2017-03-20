@@ -1,0 +1,8 @@
+Changes
+lib/Time/Duration/es.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+t/00_compile.t
+t/01_duration.t
+t/02_duration_es.t
