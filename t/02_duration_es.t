@@ -26,11 +26,11 @@ is( earlier( 2), '2 segundos antes');
 is( earlier(-2), '2 segundos después');
 
 is( ago(      0), 'ahora');
-is( ago(      2), '2 segundos atrás');
-is( ago(     -2), 'daqui a 2 segundos');
+is( ago(      2), 'hace 2 segundos');
+is( ago(     -2), 'en 2 segundos');
 is( from_now( 0), 'ahora');
-is( from_now( 2), 'daqui a 2 segundos');
-is( from_now(-2), '2 segundos atrás');
+is( from_now( 2), 'en 2 segundos');
+is( from_now(-2), 'hace 2 segundos');
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Advanced tests...
@@ -192,20 +192,20 @@ is( concise duration(   1), '1s');
 is( concise duration(  -1), '1s');
 is( concise duration(   2), '2s');
 is( concise duration(  -2), '2s');
-  
+
 is( concise later(   0), 'ahora');
 is( concise later(   2), '2s después');
 is( concise later(  -2), '2s antes');
 is( concise earlier( 0), 'ahora');
 is( concise earlier( 2), '2s antes');
 is( concise earlier(-2), '2s después');
-  
+
 is( concise ago(      0), 'ahora');
-is( concise ago(      2), '2s atrás');
-is( concise ago(     -2), 'daqui a 2s');
+is( concise ago(      2), 'hace 2s');
+is( concise ago(     -2), 'en 2s');
 is( concise from_now( 0), 'ahora');
-is( concise from_now( 2), 'daqui a 2s');
-is( concise from_now(-2), '2s atrás');
+is( concise from_now( 2), 'en 2s');
+is( concise from_now(-2), 'hace 2s');
 
 $v = $YEAR + $DAY + 2 * $HOUR + -1;
 is(concise later(       $v   ), '1a1d después');

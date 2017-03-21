@@ -10,41 +10,41 @@ our @EXPORT = qw( later later_exact earlier earlier_exact
                   duration duration_exact concise );
 our @EXPORT_OK = ('interval', @EXPORT);
 
-use constant DEBUG => 0;
 use Time::Duration qw();
+
+our $MILLISECOND = 0;
 
 sub concise ($) {
     my $string = $_[0];
-    # print "in : $string\n";
     $string =~ tr/,//d;
     $string =~ s/\by\b//;
     $string =~ s/\b(año|día|hora|minuto|segundo)s?\b/substr($1,0,1)/eg;
+    $string =~ s/\b(milisegundo)s?\b/ms/g;
     $string =~ s/\s*(\d+)\s*/$1/g;
 
     # dirty hack to restore prefixed intervals
-    $string =~ s/daqui a/daqui a /;
+    $string =~ s/en/en /;
+    $string =~ s/hace/hace /;
 
     return $string;
 }
 
-sub later {
+sub later {                    # ' earlier', ' later', 'right then'
     interval(      $_[0], $_[1], '%s antes', '%s después',  'ahora'); }
-sub later_exact {
+sub later_exact {              # ' earlier', ' later', 'right then'
     interval_exact($_[0], $_[1], '%s antes', '%s después',  'ahora'); }
-sub earlier {
+sub earlier {                  # ' later', ' earlier', 'right then'
     interval(      $_[0], $_[1], '%s después', '%s antes',  'ahora'); }
-sub earlier_exact {
+sub earlier_exact {            # ' later', ' earlier', 'right then'
     interval_exact($_[0], $_[1], '%s después', '%s antes',  'ahora'); }
-sub ago {
-    interval(      $_[0], $_[1], 'daqui a %s', '%s atrás', 'ahora'); }
-sub ago_exact {
-    interval_exact($_[0], $_[1], 'daqui a %s', '%s atrás', 'ahora'); }
-sub from_now {
-    interval(      $_[0], $_[1], '%s atrás', 'daqui a %s', 'ahora'); }
-sub from_now_exact {
-    interval_exact($_[0], $_[1], '%s atrás', 'daqui a %s', 'ahora'); }
-
-
+sub ago {                      # ' from now', ' ago', 'right now'
+    interval(      $_[0], $_[1], 'en %s', 'hace %s', 'ahora'); }
+sub ago_exact {                # ' from now', ' ago', 'right now'
+    interval_exact($_[0], $_[1], 'en %s', 'hace %s', 'ahora'); }
+sub from_now {                 # ' ago', ' from now', 'right now'
+    interval(      $_[0], $_[1], 'hace %s', 'en %s', 'ahora'); }
+sub from_now_exact {           # ' ago', ' from now', 'right now'
+    interval_exact($_[0], $_[1], 'hace %s', 'en %s', 'ahora'); }
 
 sub duration_exact {
     my $span = $_[0];   # interval in seconds
@@ -121,7 +121,7 @@ __END__
 
 =head1 NAME
 
-Time::Duration::es - describe Time duration in Spanish
+Time::Duration::es - describe time duration in Spanish
 
 =head1 SYNOPSIS
 
@@ -139,8 +139,9 @@ Check L<Time::Duration> for all the functions.
 
 Paulo A Ferreira E<lt>biafra@cpan.orgE<gt>
 
-All code was taken from Time::Duration::pt which most of its code was taken
-from Time::Duration::sv by Arthur Bergman and Time::Duration by Sean M. Burke.
+All code was taken from L<Time::Duration::pt> by Breno G. de Oliveira which most
+of its code was taken from L<Time::Duration::sv> by Arthur Bergman and
+L<Time::Duration> by Sean M. Burke.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
