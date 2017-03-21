@@ -30,13 +30,13 @@ sub concise ($) {
 }
 
 sub later {                    # ' earlier', ' later', 'right then'
-    interval(      $_[0], $_[1], '%s antes', '%s después',  'ahora'); }
+    interval(      $_[0], $_[1], '%s antes', '%s después',  'al momento'); }
 sub later_exact {              # ' earlier', ' later', 'right then'
-    interval_exact($_[0], $_[1], '%s antes', '%s después',  'ahora'); }
+    interval_exact($_[0], $_[1], '%s antes', '%s después',  'al momento'); }
 sub earlier {                  # ' later', ' earlier', 'right then'
-    interval(      $_[0], $_[1], '%s después', '%s antes',  'ahora'); }
+    interval(      $_[0], $_[1], '%s después', '%s antes',  'al momento'); }
 sub earlier_exact {            # ' later', ' earlier', 'right then'
-    interval_exact($_[0], $_[1], '%s después', '%s antes',  'ahora'); }
+    interval_exact($_[0], $_[1], '%s después', '%s antes',  'al momento'); }
 sub ago {                      # ' from now', ' ago', 'right now'
     interval(      $_[0], $_[1], 'en %s', 'hace %s', 'ahora'); }
 sub ago_exact {                # ' from now', ' ago', 'right now'
