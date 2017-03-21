@@ -23,7 +23,7 @@ sub concise ($) {
     $string =~ s/\s*(\d+)\s*/$1/g;
 
     # dirty hack to restore prefixed intervals
-    $string =~ s/en/en /;
+    $string =~ s/en([0-9])/en $1/; # en matches momento
     $string =~ s/hace/hace /;
 
     return $string;

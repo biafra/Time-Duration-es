@@ -18,10 +18,10 @@ is( duration(  -1), '1 segundo');
 is( duration(   2), '2 segundos');
 is( duration(  -2), '2 segundos');
 
-is( later(   0), 'ahora');
+is( later(   0), 'al momento');
 is( later(   2), '2 segundos después');
 is( later(  -2), '2 segundos antes');
-is( earlier( 0), 'ahora');
+is( earlier( 0), 'al momento');
 is( earlier( 2), '2 segundos antes');
 is( earlier(-2), '2 segundos después');
 
@@ -38,9 +38,9 @@ is( from_now(-2), 'hace 2 segundos');
 my $v;  #scratch var
 
 $v = 0;
-is(later(       $v   ), 'ahora');
-is(later(       $v, 3), 'ahora');
-is(later_exact( $v   ), 'ahora');
+is(later(       $v   ), 'al momento');
+is(later(       $v, 3), 'al momento');
+is(later_exact( $v   ), 'al momento');
 
 $v = 1;
 is(later(       $v   ), '1 segundo después');
@@ -193,10 +193,10 @@ is( concise duration(  -1), '1s');
 is( concise duration(   2), '2s');
 is( concise duration(  -2), '2s');
 
-is( concise later(   0), 'ahora');
+is( concise later(   0), 'al momento');
 is( concise later(   2), '2s después');
 is( concise later(  -2), '2s antes');
-is( concise earlier( 0), 'ahora');
+is( concise earlier( 0), 'al momento');
 is( concise earlier( 2), '2s antes');
 is( concise earlier(-2), '2s después');
 
