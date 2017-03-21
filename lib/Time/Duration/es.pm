@@ -2,7 +2,7 @@ package Time::Duration::es;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use base qw(Exporter);
 our @EXPORT = qw( later later_exact earlier earlier_exact
@@ -142,6 +142,8 @@ Paulo A Ferreira E<lt>biafra@cpan.orgE<gt>
 All code was taken from L<Time::Duration::pt> by Breno G. de Oliveira which most
 of its code was taken from L<Time::Duration::sv> by Arthur Bergman and
 L<Time::Duration> by Sean M. Burke.
+
+Thanks to Diana Castro and Joe Medicis for spanish revision.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
