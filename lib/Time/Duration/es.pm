@@ -143,7 +143,7 @@ All code was taken from L<Time::Duration::pt> by Breno G. de Oliveira which most
 of its code was taken from L<Time::Duration::sv> by Arthur Bergman and
 L<Time::Duration> by Sean M. Burke.
 
-Thanks to Diana Castro and Joe Medicis for spanish revision.
+Thanks to Diana Castro and Joao Medicis for the spanish revision/translation.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
