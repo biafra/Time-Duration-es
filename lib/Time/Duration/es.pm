@@ -2,7 +2,7 @@ package Time::Duration::es;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use base qw(Exporter);
 our @EXPORT = qw( later later_exact earlier earlier_exact

@@ -26,7 +26,7 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Bodogemu::Utils::Lang
+    perldoc Time::Duration::es
 
 You can also look for information at:
 
